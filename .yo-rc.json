@@ -1,0 +1,6 @@
+{
+  "generator-spring-microservice": {
+    "packageName": "no.nb.microservices.email",
+    "packageFolder": "no/nb/microservices/email"
+  }
+}
