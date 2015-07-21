@@ -34,11 +34,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>no.nb.microservices.delivery.metadata</groupId>
-            <artifactId>catalog-delivery-metadata-service-model</artifactId>
-            <version>0.0.1-ba8ce65b3d8749c3c71381ea810c677977895af7-4</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency> 

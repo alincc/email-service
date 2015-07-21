@@ -1,6 +1,5 @@
 package no.nb.microservices.email.service;
 
-import no.nb.microservices.delivery.metadata.model.OrderMetadata;
 import no.nb.microservices.email.model.Email;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,29 +27,6 @@ public class EmailService implements IEmailService {
         this.mailSender = mailSender;
         this.velocityEngine = velocityEngine;
     }
-
-    @Override
-    public void sendDeliveryEmail(OrderMetadata orderMetadata) {
-        MimeMessagePreparator preparator = new MimeMessagePreparator() {
-            @Override
-            public void prepare(MimeMessage mimeMessage) throws Exception {
-                MimeMessageHelper message = new MimeMessageHelper(mimeMessage);
-                message.setTo(orderMetadata.getDestinationEmail());
-                if (orderMetadata.getDestinationCCEmail() != null) {
-                    message.setCc(orderMetadata.getDestinationCCEmail());
-                }
-                message.setSubject("Din bestilling");
-                message.setFrom("content.delivery@nb.no");
-                Map model = new HashMap<>();
-                model.put("order", orderMetadata);
-                String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "templates/delivery.vm", model);
-                message.setText(text, true);
-            }
-        };
-
-        this.mailSender.send(preparator);
-    }
-
     @Override
     public void sendEmail(Email email) {
         MimeMessagePreparator preparator = new MimeMessagePreparator() {
