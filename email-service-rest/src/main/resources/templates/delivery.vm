@@ -1,0 +1,8 @@
+<html>
+<body>
+<p>Her er bestillingen din</p>
+<div>
+    <a href="${email.downloadUrl}">${email.downloadUrl}</a>
+</div>
+</body>
+</html>

@@ -10,9 +10,11 @@ endpoints:
     enabled: true
 
 server:
-  port: 8080
+  port: 8065
 
-spring:  
+email:
+  outgoingServer: mail.nb.no
+
 
 eureka:
   instance:
