@@ -23,10 +23,9 @@ public class EmailController {
         this.emailService = emailService;
     }
 
-
     @RequestMapping(value = "/send", method = RequestMethod.POST)
-    public ResponseEntity sendEmail(@RequestBody Email email) {
+    public void sendEmail(@RequestBody Email email) {
         emailService.sendEmail(email);
-        return new ResponseEntity(HttpStatus.OK);
     }
 }
+

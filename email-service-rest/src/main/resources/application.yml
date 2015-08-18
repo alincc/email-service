@@ -15,7 +15,6 @@ server:
 email:
   outgoingServer: mail.nb.no
 
-
 eureka:
   instance:
     preferIpAddress: true
