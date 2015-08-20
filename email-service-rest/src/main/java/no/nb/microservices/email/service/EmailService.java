@@ -44,7 +44,6 @@ public class EmailService implements IEmailService {
                 message.setFrom(email.getFrom());
                 Map model = new HashMap<>();
                 model.put("email", email.getContent());
-                model.put("deliveryDownloadUrl", applicationSettings.getDeliveryDownloadUrl());
                 String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "templates/" + email.getTemplate(), model);
                 message.setText(text, true);
             }

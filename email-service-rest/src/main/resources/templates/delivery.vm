@@ -2,7 +2,7 @@
 <body>
 <p>Her er bestillingen din</p>
 <div>
-    <a href="${deliveryDownloadUrl}${email.key}">${deliveryDownloadUrl}${email.key}</a>
+    <a href="${email.downloadUrl}">${email.downloadUrl}</a>
 </div>
 </body>
 </html>
