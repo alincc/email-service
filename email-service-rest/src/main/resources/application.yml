@@ -14,6 +14,7 @@ server:
 
 email:
   outgoingServer: mail.nb.no
+  deliveryDownloadUrl: http://api.nb.no/v1/delivery/order/
 
 eureka:
   instance:

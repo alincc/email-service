@@ -1,5 +1,6 @@
 package no.nb.microservices.email.service;
 
+import no.nb.microservices.email.config.ApplicationSettings;
 import no.nb.microservices.email.model.Email;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,13 @@ public class EmailService implements IEmailService {
 
     private JavaMailSender mailSender;
     private VelocityEngine velocityEngine;
+    private ApplicationSettings applicationSettings;
 
     @Autowired
-    public EmailService(JavaMailSender mailSender, VelocityEngine velocityEngine) {
+    public EmailService(JavaMailSender mailSender, VelocityEngine velocityEngine, ApplicationSettings applicationSettings) {
         this.mailSender = mailSender;
         this.velocityEngine = velocityEngine;
+        this.applicationSettings = applicationSettings;
     }
     @Override
     public void sendEmail(Email email) {
@@ -41,6 +44,7 @@ public class EmailService implements IEmailService {
                 message.setFrom(email.getFrom());
                 Map model = new HashMap<>();
                 model.put("email", email.getContent());
+                model.put("deliveryDownloadUrl", applicationSettings.getDeliveryDownloadUrl());
                 String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, "templates/" + email.getTemplate(), model);
                 message.setText(text, true);
             }
