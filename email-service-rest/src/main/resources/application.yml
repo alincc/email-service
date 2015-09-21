@@ -10,7 +10,7 @@ endpoints:
     enabled: true
 
 server:
-  port: 8065
+  port: 8080
 
 email:
   outgoingServer: mail.nb.no
