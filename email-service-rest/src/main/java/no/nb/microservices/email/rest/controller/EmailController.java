@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/email")
+@RequestMapping("/email/v1")
 public class EmailController {
 
     private static final Logger LOG = LoggerFactory.getLogger(EmailController.class);

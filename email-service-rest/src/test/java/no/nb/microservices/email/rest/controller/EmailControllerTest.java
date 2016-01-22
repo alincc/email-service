@@ -34,7 +34,7 @@ public class EmailControllerTest {
 
     @Test
     public void helloWorldTest() throws Exception{
-        mockMvc.perform(post("/v1/email/send")
+        mockMvc.perform(post("/email/v1/send")
         .requestAttr("itemMetadata", new Email()))
                 .andExpect(status().is4xxClientError());
     }
