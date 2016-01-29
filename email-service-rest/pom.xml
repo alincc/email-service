@@ -17,11 +17,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <start-class>no.nb.microservices.email.Application</start-class>
-        <docker.image.prefix>nb</docker.image.prefix>
+        <docker.image.prefix>registry.nb.no:5000/nb</docker.image.prefix>
     </properties>
 
     <dependencyManagement>
-        <dependencies>
+        <dependencies>v
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-parent</artifactId>
@@ -155,8 +155,9 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.2.3</version>
+                <version>0.3.9</version>
                 <configuration>
+                    <registryUrl>https://registry.nb.no:5000/v1/</registryUrl>
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
