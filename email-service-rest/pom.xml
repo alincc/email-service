@@ -21,7 +21,7 @@
     </properties>
 
     <dependencyManagement>
-        <dependencies>v
+        <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-parent</artifactId>
@@ -155,9 +155,9 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.3.9</version>
+                <version>0.4.0</version>
                 <configuration>
-                    <registryUrl>https://registry.nb.no:5000/v1/</registryUrl>
+                    <!--<registryUrl>https://registry.nb.no:5000/v1/</registryUrl>-->
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
@@ -168,6 +168,14 @@
                         </resource>
                     </resources>
                 </configuration>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>build</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
             </plugin>
         </plugins>
     </build>
