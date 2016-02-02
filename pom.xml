@@ -2,13 +2,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>no.nb.microservices.email</groupId>
     <artifactId>email-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Handles outgoing emails</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.5.RELEASE</version>
+        <version>1.2.8.RELEASE</version>
         <relativePath/>
         <!-- lookup parent from repository -->
     </parent>
