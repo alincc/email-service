@@ -4,4 +4,4 @@ info:
     description: Handles outgoing emails
 
 server:
-  port: 8078
+  port: 8080
