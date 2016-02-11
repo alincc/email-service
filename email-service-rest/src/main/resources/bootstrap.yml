@@ -3,20 +3,24 @@ spring:
     name: email-service
   cloud:
     config:
+      failFast: false
       discovery:
         enabled: true
 
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: false
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka/
 
 ---
 
 spring:
   profiles: docker
+  cloud:
+    config:
+      failFast: true
 
 eureka:
   instance:
