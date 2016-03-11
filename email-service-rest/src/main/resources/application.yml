@@ -4,7 +4,7 @@ info:
     description: Handles outgoing emails
 
 server:
-  port: 0
+  port: 8023
 
 email:
   outgoingServer: mail.nb.no
