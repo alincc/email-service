@@ -1,16 +1,18 @@
 package no.nb.microservices.email.it;
 
-import no.nb.microservices.email.Application;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+
+import no.nb.microservices.email.Application;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Application.class})
-@WebAppConfiguration
+@SpringApplicationConfiguration(classes = {Application.class})
+@WebIntegrationTest("server.port: 0")
 public class IntegrationTest {
+    
     @Test
     public void contextLoads() {
 
