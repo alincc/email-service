@@ -1,4 +1,4 @@
-package no.nb.microservices.email.rest.controller;
+package no.nb.microservices.email.rest.global;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

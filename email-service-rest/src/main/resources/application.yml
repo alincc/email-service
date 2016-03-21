@@ -1,10 +1,23 @@
 info:
-  app:
-    name: email-service
-    description: Handles outgoing emails
+    app:
+        name: email-service
+        description: Handles outgoing emails
+    build:
+        artifact: ${project.artifactId}
+        name: ${project.name}
+        description: ${project.description}
+        version: ${project.version}
 
 server:
-  port: 8023
+    port: 8023
+
+zipkin:
+    collector-hostname: localhost
+    
+monitoring:
+    hostname: localhost
+    port: 2003
+    period: 1
 
 email:
-  outgoingServer: mail.nb.no
+    outgoingServer: mail.nb.no
